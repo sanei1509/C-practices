@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef lista_elementos
+typedef struct lista_elementos
 {
 	int n;
-	lista_elementos *next;
-}elemento_t;
+	struct lista_elementos *next;
+} elemento_t;
 
-elemento_t *insert_empty_list(elemento_t **head, int n)
+elemento_t *insert_empty_list(elemento_t *head, int n)
 {
 	elemento_t *nuevo_elemento;
 
@@ -16,9 +16,9 @@ elemento_t *insert_empty_list(elemento_t **head, int n)
 		return (NULL);
 
 	nuevo_elemento->n = n;
-	if (*head == NULL)
+	if (head == NULL)
 	{
-		*head = nuevo_elemento;
+		head = nuevo_elemento;
 		nuevo_elemento->next = NULL;
 	}
 
@@ -27,10 +27,12 @@ elemento_t *insert_empty_list(elemento_t **head, int n)
 
 int main()
 {
-	elemento_t *lista_creada = NULL;
+	elemento_t *lista_vacia = NULL;
 
-	lista_creada = insert_empty;
-	printf("", lista_cread->);
+	lista_vacia = insert_empty_list(lista_vacia, 2);
+	
+    lista_vacia = insert_empty_list(lista_vacia, 4);
+	printf("%d\n", lista_vacia->n);
 
 	return (0);
 }
